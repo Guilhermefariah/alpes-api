@@ -14,6 +14,17 @@ services:
       - db
     command: php artisan serve --host=0.0.0.0 --port=8000
 
+  scheduler:
+    build: .
+    container_name: alpes-api-scheduler
+    restart: unless-stopped
+    working_dir: /var/www
+    volumes:
+      - .:/var/www
+    depends_on:
+      - app
+    command: php artisan schedule:work
+
   db:
     image: mysql:8.0
     container_name: alpes-api-db

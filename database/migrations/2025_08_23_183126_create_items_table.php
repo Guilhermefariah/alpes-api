@@ -17,6 +17,12 @@ return new class extends Migration
             $table->string('name');
             $table->text('description')->nullable();
             $table->decimal('price', 10, 2)->nullable();
+            $table->string('color')->nullable();
+            $table->string('fuel')->nullable();
+            $table->string('year_model')->nullable();
+            $table->string('year_build')->nullable();
+            $table->json('photos')->nullable();
+            $table->boolean('sold')->default(false);
             $table->timestamps();
         });
     }

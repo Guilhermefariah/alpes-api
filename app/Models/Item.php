@@ -10,6 +10,12 @@ class Item extends Model
         'code',
         'name',
         'description',
-        'price'
+        'price',
+        'color',
+        'fuel',
+        'year_model',
+        'year_build',
+        'photos',
+        'sold'
     ];
 }
